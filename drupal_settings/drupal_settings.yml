@@ -1,0 +1,17 @@
+#PATH to all data
+data_dir: /tmp/data
+
+########## EXPORT DATA ##########
+
+#Connecting to a database
+adapter: mysql2
+host: localhost
+database: drupal
+user: szpryc
+password: root
+
+# DRUPAL
+
+drupal_content_types_json: /Users/piotrprotas/Documents/RUBY_CONTENTUL/drupal_adapter/drupal_settings/drupal_content_types.json
+drupal_boolean_columns: /Users/piotrprotas/Documents/RUBY_CONTENTUL/drupal_adapter/drupal_settings/boolean_columns.yml
+drupal_base_url: http://example_hostname.com
