@@ -1,0 +1,18 @@
+{
+  "uid": 1,
+  "name": "username",
+  "pass": "password",
+  "mail": "useremail@gmail.com",
+  "theme": "",
+  "signature": "",
+  "signature_format": null,
+  "created": 1417517150,
+  "access": 1418026959,
+  "login": 1417605965,
+  "status": 1,
+  "timezone": "Europe/Berlin",
+  "language": "",
+  "picture": 0,
+  "init": "useremail@gmail.com",
+  "data": "b:0;"
+}

@@ -28,7 +28,7 @@ module Contentful
 
         def map_fields(row, result = {})
           result[:id] = id(row[:cid])
-          result[:subject] = id(row[:subject])
+          result[:subject] = row[:subject]
           result[:body] = body(row[:cid])
           result[:entity] = entity(row[:nid])
           result[:author] = author(row[:uid])

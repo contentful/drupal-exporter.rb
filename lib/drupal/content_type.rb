@@ -68,7 +68,7 @@ module Contentful
           result[:id] = id(row[:nid])
           result[:title] = row[:title]
           result[:author] = author(row[:uid])
-          result[:comments] = comments unless ccomments.empty?
+          result[:comments] = comments unless comments.empty?
           result[:tags] = tags(row[:nid]) unless tags(row[:nid]).empty?
           result[:created_at] = created_at(row[:created])
           result
@@ -98,8 +98,12 @@ module Contentful
         def get_file_id(related_row, table_name)
           file_key = "#{table_name}_fid".to_sym
           file_id = related_row.first[file_key]
-          file_asset_id = config.db[:file_managed].where(fid: file_id).first[:fid]
+          file_asset_id = file_id(file_id)
           link_asset_to_content_type(file_asset_id)
+        end
+
+        def file_id(file_id)
+          config.db[:file_managed].where(fid: file_id).first[:fid]
         end
 
         def get_related_row(entity_id, table_name)

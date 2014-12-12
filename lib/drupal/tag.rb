@@ -24,7 +24,6 @@ module Contentful
           exporter.write_json_to_file("#{config.entries_dir}/tag/#{db_object[:id]}.json", db_object)
         end
 
-        #TODO VID??
         def map_fields(row, result = {})
           result[:id] = id(row[:tid])
           result[:name] = row[:name]

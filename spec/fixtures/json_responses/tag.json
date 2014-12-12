@@ -1,0 +1,9 @@
+{
+  "id": "tag_1",
+  "name": "article tag",
+  "description": "desc",
+  "vocabulary": {
+    "type": "EntryVocabulary",
+    "id": "vocabulary_1"
+  }
+}
