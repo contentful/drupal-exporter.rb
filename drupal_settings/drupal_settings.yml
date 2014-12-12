@@ -1,5 +1,5 @@
 #PATH to all data
-data_dir: /tmp/data
+data_dir: PATH_TO_ALL_FILES
 
 ########## EXPORT DATA ##########
 
@@ -7,11 +7,11 @@ data_dir: /tmp/data
 adapter: mysql2
 host: localhost
 database: drupal
-user: szpryc
-password: root
+user:
+password:
 
 # DRUPAL
 
-drupal_content_types_json: /Users/piotrprotas/Documents/RUBY_CONTENTUL/drupal_adapter/drupal_settings/drupal_content_types.json
-drupal_boolean_columns: /Users/piotrprotas/Documents/RUBY_CONTENTUL/drupal_adapter/drupal_settings/boolean_columns.yml
+drupal_content_types_json: PATH_TO_FILE/drupal_content_types.json
+drupal_boolean_columns: PATH_TO_FILE/boolean_columns.yml
 drupal_base_url: http://example_hostname.com
