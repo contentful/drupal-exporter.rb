@@ -1,6 +1,6 @@
 require './lib/configuration'
 
-shared_context 'shared_configuration', :a => :b do
+shared_context 'shared_configuration' do
   before do
     yaml_text = <<-EOF
           data_dir: spec/fixtures/drupal
