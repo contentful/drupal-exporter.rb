@@ -3,8 +3,8 @@
 require 'escort'
 require_relative '../lib/cli'
 
-fail ArgumentError, 'Set path for configuration file and define action. More details you can find in README.' if ARGF.argv.empty?
-fail ArgumentError, "Missing '--config-file' argument. The correct is form: 'wordpress-adapter --config-file PATH_TO_CONFIGURATION_FILE --action'. View README." unless ARGV.include?('--config-file')
+fail ArgumentError, 'Set the path to the configuration file and define an action. More information can be found in the README.' if ARGF.argv.empty?
+fail ArgumentError, "Missing '--config-file' argument. Usage: 'wordpress-adapter --config-file PATH_TO_CONFIGURATION_FILE --action'." unless ARGV.include?('--config-file')
 
 Escort::App.create do |app|
   app.summary 'Executable file of Drupal exporter'
