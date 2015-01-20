@@ -1,14 +1,14 @@
 #PATH to all data
-data_dir: /tmp/data
+data_dir: PATH_WHERE_ALL_DATA_WILL_BE_SAVED
 
 ########## EXPORT DATA ##########
 
 #Connecting to a database
 adapter: mysql2
 host: localhost
-database: drupal
-user: szpryc
-password: root
+database: drupal_database_name
+user: username
+password: password
 
 # DRUPAL
 
@@ -16,8 +16,8 @@ drupal_content_types_json: drupal_settings/drupal_content_types.json
 drupal_boolean_columns: drupal_settings/boolean_columns.yml
 drupal_base_url: http://example_hostname.com
 
-#CONVERT CONTENTFUL MODEL TO CONTENTFUL IMPORT STRUCTURE
-#content_model_json: PATH_TO_CONTENTFUL_MODEL_JSON_FILE
-#converted_model_dir: PATH_WHERE_CONVERTED_CONTENT_MODEL_WILL_BE_SAVED
-#
-#contentful_structure_dir: PATH_TO_CONTENTFUL_STRUCUTRE_JSON_FILE
+# CONVERT CONTENTFUL MODEL TO CONTENTFUL IMPORT STRUCTURE
+content_model_json: PATH_TO_CONTENTFUL_MODEL_JSON_FILE
+converted_model_dir: PATH_WHERE_CONVERTED_CONTENT_MODEL_WILL_BE_SAVED
+
+contentful_structure_dir: PATH_TO_CONTENTFUL_STRUCUTRE_JSON_FILE
