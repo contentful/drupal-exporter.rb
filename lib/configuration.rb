@@ -10,7 +10,6 @@ module Contentful
                 :entries_dir,
                 :assets_dir,
                 :db,
-                :content_types,
                 :drupal_content_types,
                 :drupal_base_url
 
@@ -25,18 +24,12 @@ module Contentful
       @drupal_content_types = JSON.parse(File.read(config['drupal_content_types_json']), symbolize_names: true).with_indifferent_access
       @drupal_base_url = config['drupal_base_url']
       @db = adapter_setup
-      @import_form_dir = config['import_form_dir']
-      @content_types = config['content_model_json']
     end
 
     def validate_required_parameters
-      define_data_dir
+      fail ArgumentError, 'Set PATH to data_dir, the destination for all generated files. Check README' if config['data_dir'].nil?
+      fail ArgumentError, 'Set PATH to drupal_content_types_json. File with Drupal database structure. View README' if config['drupal_content_types_json'].nil?
       define_adapter
-      define_content_model_json
-    end
-
-    def define_data_dir
-      fail ArgumentError, 'Set PATH to data_dir. Folder where all data will be stored. Check README' if config['data_dir'].nil?
     end
 
     def define_adapter
@@ -45,12 +38,9 @@ module Contentful
       end
     end
 
-    def define_content_model_json
-      fail ArgumentError, 'Set PATH to drupal_content_types_json. File with Drupal database structure. Check README' if config['drupal_content_types_json'].nil?
-    end
-
     def adapter_setup
       Sequel.connect(:adapter => config['adapter'], :user => config['user'], :host => config['host'], :database => config['database'], :password => config['password'])
     end
+
   end
 end
