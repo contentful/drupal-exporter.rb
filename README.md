@@ -148,5 +148,5 @@ drupal_base_url: http://example_hostname.com
 Command to extract data:
 
 ```bash
-contentful-importer --config-file settings.yml --exporter drupal --export-json
+drupal-exporter --config-file settings.yml --extract-to-json
 ```
