@@ -154,7 +154,7 @@ drupal-exporter --config-file settings.yml --extract-to-json
 
 ## Step by step
 
-1. Create YAML file with required parameters (eg. `settings.yml`):
+1. Create a YAML file with the required parameters (eg. `settings.yml`):
 
     ```yml
     # PATH TO ALL DATA
@@ -186,22 +186,22 @@ drupal-exporter --config-file settings.yml --extract-to-json
              'https://api.contentful.com/spaces/SPACE_ID/content_types' > contentful_model.json
        ```
 
-       It will create ```contentful_model.json``` file, which you need to transform into the ```contentful_structure.json``` using:
+       It will create `contentful_model.json` file, which you need to transform into the `contentful_structure.json` using:
 
        ```bash
         drupal-exporter --config-file settings.yml --convert-content-model-to-json
        ```
 
-       The converted content model will be saved as JSON file in the ```converted_model_dir``` path.
+       The converted content model will be saved as JSON file in the `converted_model_dir` path.
 
        Now you can generate content types JSON files.
 
        ```bash
        drupal-exporter --config-file settings.yml  --create-contentful-model-from-json
        ```
-       It will create content types json files which represents your Contentful's content types structure. They are needed to import data to Contentful platform.
+       It will create the content types JSON files which represent your content structure for the import.
 
-3. Create ```drupal_content_types.json``` file. This file contains mapped structure of your database.
+3. Create the `drupal_content_types.json` file. This file contains the mapped structure of your database.
 
     Mapping structure:
 
@@ -213,11 +213,11 @@ drupal-exporter --config-file settings.yml --extract-to-json
         }
     ```
 
-    A sample mapping file, you can find in the ```drupal_settings/drupal_content_types.json``` directory.
+    You can find a sample mapping file in the `drupal_settings/drupal_content_types.json` directory.
 
 4. (Optional). Boolean values. Sequel converts boolean values `0,1`, stored in the database only when the field is TINYINT(1) type.
     To map the value of `0,1` to `false, true`, you have to specify the column names in the yaml file (eg. `boolean_columns.yml`) and
-    specify the path to this file in the `settings.yml` file, parameter ```drupal_boolean_columns```
+    specify the path to this file in the `settings.yml` file, parameter `drupal_boolean_columns`
 
     Example:
 
@@ -230,7 +230,7 @@ drupal-exporter --config-file settings.yml --extract-to-json
     ```bash
     drupal-exporter --config-file settings.yml --extract-to-json
     ```
-    It will only extract the content and store it as JSON files.
+    It will _only_ extract the content and store it as JSON files, nothing will be uploaded yet.
 
 6. Use the [contentful-importer](https://github.com/contentful/generic-importer.rb) to import the content to [contentful.com](https://www.contentful.com)
 
