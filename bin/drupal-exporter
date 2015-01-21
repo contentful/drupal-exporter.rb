@@ -4,7 +4,7 @@ require 'escort'
 require_relative '../lib/cli'
 
 fail ArgumentError, 'Set the path to the configuration file and define an action. More information can be found in the README.' if ARGF.argv.empty?
-fail ArgumentError, "Missing '--config-file' argument. Usage: 'wordpress-adapter --config-file PATH_TO_CONFIGURATION_FILE --action'." unless ARGV.include?('--config-file')
+fail ArgumentError, "Missing '--config-file' argument. Usage: 'drupal-exporter --config-file PATH_TO_CONFIGURATION_FILE --action'." unless ARGV.include?('--config-file')
 
 Escort::App.create do |app|
   app.summary 'Executable file of Drupal exporter'
@@ -20,13 +20,14 @@ Escort::App.create do |app|
     end
 
     app.command '--create-contentful-model-from-json' do |command|
-      command.summary 'Query data from Database'
+      command.summary 'Create content types files, based on contentful structure json file.'
       command.action do |options, arguments|
         Command::CLI.new(options, arguments).execute
       end
     end
+
     app.command '--convert-content-model-to-json' do |command|
-      command.summary 'Convert dump file from Contentful model to import form. View README'
+      command.summary 'Transform content_model file into contentful_structure import form. View README'
       command.action do |options, arguments|
         Command::CLI.new(options, arguments).execute
       end
