@@ -12,9 +12,9 @@ This tool will extract the following content from a Drupal database dump file:
 
 ## Setup ##
 
-Create settings a YML file (e.g. settings.yml) to define all required parameters.
+Create settings a YML file (eg. `settings.yml`) to define all required parameters.
 Assuming we are going to work with either MySQL, SQLite or a PostgreSQL database, you must define credentials to connect Drupal database.
-An example configuration for connecting with a MySQL database named "test_import":
+An example configuration for connecting with a MySQL database named "drupal_database_name":
 
 ```yml
 adapter: mysql2
@@ -55,7 +55,7 @@ Tags => 'tags'
 ### Custom tag content types ###
 
 If you want to add tags that you define in a custom table, you need to specify them by adding an addition parameter to the hash:
-```
+```javascript
 "term_tagging":{
     "table": "field_term_tagging"
 }
@@ -63,7 +63,7 @@ If you want to add tags that you define in a custom table, you need to specify t
 
 ### Booleans ###
 
-To map columns of boolean values, you need to create YML file ( e.g. boolean_columns.yml ) and define mechanic names of boolean columns.
+To map columns of boolean values, you need to create YML file ( eg. boolean_columns.yml ) and define mechanic names of boolean columns.
 
 Example:
 ```yml
@@ -158,14 +158,14 @@ drupal-exporter --config-file settings.yml --extract-to-json
 
     ```yml
     # PATH TO ALL DATA
-    data_dir: /tmp/data
+    data_dir: PATH_TO_ALL_DATA
 
     # CONNECTING TO A DATABASE
     adapter: mysql2
     host: localhost
-    database: drupal
-    user: szpryc
-    password: root
+    database: drupal_database_name
+    user: username
+    password: secret_password
 
     # DRUPAL SETTINGS
     drupal_content_types_json: drupal_settings/drupal_content_types.json
@@ -176,9 +176,9 @@ drupal-exporter --config-file settings.yml --extract-to-json
     content_model_json: PATH_TO_CONTENTFUL_MODEL_JSON_FILE/contentful_model.json
     converted_model_dir: PATH_WHERE_CONVERTED_CONTENT_MODEL_WILL_BE_SAVED/contentful_structure.json
 
-    contentful_structure_dir: PATH_TO_CONTENTFUL_STRUCUTRE_JSON_FILE/contentful_structure.json
+    contentful_structure_dir: PATH_TO_CONTENTFUL_STRUCTURE_JSON_FILE/contentful_structure.json
     ```
-2. (Not required to extract data). Create the contentful_structure.json. First you need to create a content model using the [Contentful web application](www.contentful.com). Then you can download the content model using the content management api and use the content model for the import:
+2. (Not required to extract data). Create the `contentful_structure.json`. First you need to create a content model using the [Contentful web application](www.contentful.com). Then you can download the content model using the content management api and use the content model for the import:
 
        ```bash
         curl -X GET \
@@ -217,7 +217,7 @@ drupal-exporter --config-file settings.yml --extract-to-json
 
 4. (Optional). Boolean values. Sequel converts boolean values `0,1`, stored in the database only when the field is TINYINT(1) type.
     To map the value of `0,1` to `false, true`, you have to specify the column names in the yaml file (eg. `boolean_columns.yml`) and
-    specify the path to this file in the `settings.yml` file, parameter `drupal_boolean_columns`
+    specify the path to this file in the `settings.yml` file, parameter `drupal_boolean_columns`.
 
     Example:
 
