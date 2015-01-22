@@ -5,7 +5,6 @@ Drupal to Contentful Exporter
 This tool will extract the following content from a Drupal database dump file:
 
 * Content types (Blog, Article, Page, Custom content types)
-* Comments
 * Tags
 * Vocabularies
 * Users
@@ -42,13 +41,12 @@ Drupal name of content type => 'Blog'
 Contentful name of content type => 'Blog'
 ```
 
-## Comments and Tags ##
+## Tags ##
 
 These content types are exported from the Drupal database by default and assigned to every content type. There is no need to specify them in the content type structure.
 
 They will be saved with the following api field ids:
 ```
-Comments => 'comments'
 Tags => 'tags'
 ```
 

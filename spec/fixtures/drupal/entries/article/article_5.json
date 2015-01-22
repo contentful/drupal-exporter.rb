@@ -5,16 +5,6 @@
     "type": "Author",
     "id": "user_1"
   },
-  "comments": [
-    {
-      "type": "EntryComment",
-      "id": "comment_3"
-    },
-    {
-      "type": "EntryComment",
-      "id": "comment_4"
-    }
-  ],
   "tags": [
     {
       "type": "EntryTag",

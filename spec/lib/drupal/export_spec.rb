@@ -19,7 +19,6 @@ module Contentful
         end
 
         it 'save_data_as_json' do
-          expect_any_instance_of(Export).to receive(:comments)
           expect_any_instance_of(Export).to receive(:tags)
           expect_any_instance_of(Export).to receive(:vocabularies)
           expect_any_instance_of(Export).to receive(:users)
