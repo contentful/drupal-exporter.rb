@@ -41,17 +41,6 @@ module Contentful
           {type: 'Author', id: "user_#{user_id}"}
         end
 
-        def comments(content_row_id)
-          entity_comments(content_row_id).each_with_object([]) do |comment, comments|
-            linked_comment = {type: 'EntryComment', id: "comment_#{comment[:cid]}"}
-            comments << linked_comment
-          end
-        end
-
-        def entity_comments(entity_id)
-          config.db[:comment].where(nid: entity_id)
-        end
-
         def tags(entity_row_id)
           entity_tags(entity_row_id).each_with_object([]) do |tag, tags|
             linked_tag = {type: 'EntryTag', id: "tag_#{tag[:field_tags_tid]}"}
@@ -64,11 +53,9 @@ module Contentful
         end
 
         def set_default_data(row, result = {})
-          comments = comments(row[:nid])
           result[:id] = id(row[:nid])
           result[:title] = row[:title]
           result[:author] = author(row[:uid])
-          result[:comments] = comments unless comments.empty?
           result[:tags] = tags(row[:nid]) unless tags(row[:nid]).empty?
           result[:created_at] = created_at(row[:created])
           result

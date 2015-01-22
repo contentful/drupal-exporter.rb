@@ -28,9 +28,7 @@ module Contentful
           @content_type.send(:extract_data, @row)
           article = entry_fixture('article/article_5')
           expect(article).to include(id: 'article_5', title: 'Article first title', body: 'Article first body!')
-          expect(article[:comments].count).to eq 2
           expect(article[:tags].count).to eq 2
-          expect(article[:comments].first).to include(type: 'EntryComment', id: 'comment_3')
           expect(article[:image]).to include(type: 'File', id: 'file_1')
         end
 

@@ -24,7 +24,6 @@ module Contentful
           exporter.write_json_to_file("#{config.entries_dir}/user/#{db_object[:id]}.json", db_object)
         end
 
-        #TODO ADD IMAGE USER
         def map_fields(row, result = {})
           result[:id] = id(row[:uid])
           result[:name] = row[:name]

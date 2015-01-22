@@ -2,7 +2,6 @@ require 'fileutils'
 require 'json'
 require 'yaml'
 
-require_relative 'comment'
 require_relative 'tag'
 require_relative 'vocabulary'
 require_relative 'user'
@@ -23,7 +22,6 @@ module Contentful
 
         def save_data_as_json
           boolean_columns << YAML.load_file(config.config['drupal_boolean_columns']) if config.config['drupal_boolean_columns']
-          comments
           tags
           vocabularies
           users
@@ -42,10 +40,6 @@ module Contentful
         end
 
         private
-
-        def comments
-          Comment.new(self, config).save_comments_as_json
-        end
 
         def tags
           Tag.new(self, config).save_tags_as_json

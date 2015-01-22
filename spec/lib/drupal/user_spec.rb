@@ -34,8 +34,8 @@ module Contentful
         end
 
         it 'map_fields' do
-          comment = @user.send(:map_fields, @row)
-          expect(comment).to include(id: 'user_1', email: 'useremail@gmail.com', name: 'username', created_at: 'Tue, 02 Dec 2014 11:45:50 +0100')
+          user = @user.send(:map_fields, @row)
+          expect(user).to include(id: 'user_1', email: 'useremail@gmail.com', name: 'username', created_at: 'Tue, 02 Dec 2014 11:45:50 +0100')
         end
 
         it 'id' do
