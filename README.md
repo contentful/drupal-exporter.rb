@@ -1,6 +1,8 @@
 Drupal to Contentful Exporter
 =================
 
+# This Gem supports only Drupal version 7.
+
 ## Description
 This tool will extract the following content from a Drupal database dump file:
 
@@ -73,10 +75,10 @@ This will install the `drupal-exporter` executable.
     Mapping structure:
 
     ```javascript
-        mechanic_name_of_content_type : {
-            contentful_api_field_1 : column_mechanic_name_1,
-            contentful_api_field_2: column_mechanic_name_2,
-            contentful_api_field_3 : column_mechanic_name_3
+        machine_name_of_content_type : {
+            contentful_api_field_1 : column_machine_name_1,
+            contentful_api_field_2: column_machine_name_2,
+            contentful_api_field_3 : column_machine_name_3
         }
     ```
 
@@ -153,9 +155,14 @@ If you want to add tags that you define in a custom table, you need to specify t
 }
 ```
 
+### Machine name ###
+
+To find `machine name` in your Drupal structure, sign in to your Admin console and open `Structure` section. Next to the name of Content type, will be located machine name in brackets.
+To find `machine name` for individual field, go into `manage fields` option.
+
 ### Booleans ###
 
-To map columns of boolean values, you need to create YML file ( eg. boolean_columns.yml ) and define mechanic names of boolean columns.
+To map columns of boolean values, you need to create YML file ( eg. boolean_columns.yml ) and define machine names of boolean columns.
 
 Example:
 ```yml
@@ -183,10 +190,10 @@ drupal_base_url: http://example_hostname.com
 Create JSON file with content types structure:
 
 ```javascript
-"mechanic_name_of_content_type" : {
-"contentful_api_fiel_idd" : "column_mechanic_name",
-"contentful_api_field_id2" : "column_mechanic_name2",
-"contentful_api_field_id3" : "column_mechanic_name23"
+"machine_name_of_content_type" : {
+"contentful_api_fiel_idd" : "column_machine_name",
+"contentful_api_field_id2" : "column_machine_name2",
+"contentful_api_field_id3" : "column_machine_name23"
 }
 ```
 
