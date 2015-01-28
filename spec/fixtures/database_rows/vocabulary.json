@@ -1,0 +1,9 @@
+{
+  "vid": 3,
+  "name": "tag_name",
+  "machine_name": "bad",
+  "description": "Very bad tag",
+  "hierarchy": 0,
+  "module": "taxonomy",
+  "weight": 0
+}

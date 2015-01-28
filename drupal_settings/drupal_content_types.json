@@ -1,0 +1,47 @@
+// machine_name_of_content_type : {
+//  contentful_api_field : column_machine_name
+// }
+
+{
+  "article": {
+    "body": "body",
+    "image": "field_image"
+  },
+  "page": {
+    "body": "body"
+  },
+  "blog": {
+    "body": "body"
+  },
+  "content_type": {
+    "body": "body",
+    "age": "field_age",
+    "if_content_type": "field_if_content_type",
+    "decimal": "field_decimal"
+  },
+  "second_content_type": {
+    "body": "body",
+    "firma": "field_firma"
+  },
+  "content_all_types": {
+    "body": "body",
+    "file": "field_file",
+    "image_sec": "field_sec_image",
+    "integer": "field_integer",
+    "boolean": "field_boolean",
+    "decimal": "field_sec_decimal",
+    "list_float": "field_list_float",
+    "list_integer": "field_list_integer",
+    "list_text": "field_list_text",
+    "long_text": "field_long_text",
+    "text_summary": "field_text_summary",
+    "term_tagging": {
+      "table": "field_term_tagging"
+    },
+    "text": "field_text"
+  },
+  "assety": {
+    "body": "body",
+    "assets": "field_asset"
+  }
+}
