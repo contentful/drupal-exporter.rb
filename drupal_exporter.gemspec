@@ -6,11 +6,11 @@ require File.expand_path('../lib/version', __FILE__)
 Gem::Specification.new do |spec|
   spec.name          = 'drupal-exporter'
   spec.version       = Version::VERSION
-  spec.authors       = ['']
-  spec.email         = ['']
-  spec.description   = ''
-  spec.summary       = ''
-  spec.homepage      = ''
+  spec.authors       = ['Contentful GmbH (Andreas Tiefenthaler)']
+  spec.email         = ['rubygems@contentful.com']
+  spec.description   = 'Drupal exporter that prepares content to be imported'
+  spec.summary       = 'Exporter for Drupal 7'
+  spec.homepage      = 'https://github.com/contentful/drupal-exporter.rb'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
