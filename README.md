@@ -47,7 +47,7 @@ This will install the `drupal-exporter` executable.
 
     contentful_structure_dir: PATH_TO_CONTENTFUL_STRUCTURE_JSON_FILE/contentful_structure.json
     ```
-2. (Not required to extract data). Create the `contentful_structure.json`. First you need to create a content model using the [Contentful web application](www.contentful.com). Then you can download the content model using the content management api and use the content model for the import:
+2. (Not required to extract data). Create the `contentful_structure.json`. First you need to create a content model using the [Contentful web application](http://www.contentful.com). Then you can download the content model using the content management api and use the content model for the import:
 
        ```bash
         curl -X GET \
